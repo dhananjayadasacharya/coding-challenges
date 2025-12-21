@@ -1,3 +1,4 @@
+from restaurant import (restaurant, branch, course_category, menu_item,menu, special_menu)
 # create restaurant
 rest = restaurant("food_hub")
 

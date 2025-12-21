@@ -1,3 +1,4 @@
+from hospital import (hospital, ward, patient,senior_surgeon)
 # create hospital and wards
 h1 = hospital(1, "city_hospital")
 

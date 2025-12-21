@@ -1,3 +1,4 @@
+from exam_portal import (Category, Topic, MCQQuestion, ParagraphQuestion, ExamPortal)
 # Create categories and topics
 cat1 = Category(1, "Programming")
 cat2 = Category(2, "Databases")

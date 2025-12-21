@@ -1,3 +1,4 @@
+from marine_company import marine_company, cruise_ship, cargo_ship, customer
 # create marine company
 company = marine_company("oceanic_transports")
 
