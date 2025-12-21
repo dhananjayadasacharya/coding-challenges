@@ -1,0 +1,46 @@
+# create restaurant
+rest = restaurant("food_hub")
+
+# create branches
+b1 = branch(1, "bangalore")
+b2 = branch(2, "mysore")
+
+rest.add_branch(b1)
+rest.add_branch(b2)
+
+# create categories
+starter = course_category(1, "starter")
+main_course = course_category(2, "main_course")
+dessert = course_category(3, "dessert")
+
+# create items
+starter.add_item(menu_item(1, "soup", 120))
+starter.add_item(menu_item(2, "salad", 150))
+
+main_course.add_item(menu_item(3, "biryani", 250))
+dessert.add_item(menu_item(4, "ice_cream", 100))
+
+# normal menu
+normal_menu = menu(1, "regular_menu")
+normal_menu.add_category(starter)
+normal_menu.add_category(main_course)
+normal_menu.add_category(dessert)
+
+# special menu
+special = special_menu(2, "festival_menu")
+special.add_category(starter)
+special.add_category(main_course)
+special.add_category(dessert)
+
+rest.add_menu(normal_menu)
+rest.add_menu(special)
+
+print("total menu items:", rest.list_total_menu_items())
+
+print("\nitems in starter category:")
+for item in rest.list_items_by_category("starter"):
+    print(item.name, item.price)
+
+print("\nspecial menu items:")
+for item in rest.list_special_menu_items():
+    print(item.name, item.price)

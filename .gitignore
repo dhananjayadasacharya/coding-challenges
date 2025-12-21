@@ -1,6 +1,7 @@
 # Node
 node_modules/
 dist/
+materials/
 
 # Python
 __pycache__/
