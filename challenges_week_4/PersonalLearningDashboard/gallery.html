@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Personal Learning Dashboard - Photo Gallery">
+    <title>PLD - Gallery</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class'
+        }
+    </script>
+</head>
+<body class="bg-gray-100 dark:bg-gray-900 transition-colors duration-200">
+    <header class="bg-slate-800 text-white shadow-lg sticky top-0 z-50">
+        <nav class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <h1 class="text-2xl font-bold">Personal Learning Dashboard</h1>
+            <ul class="hidden md:flex space-x-6">
+                <li><a href="dashboard.html" class="hover:text-blue-400 transition">Dashboard</a></li>
+                <li><a href="profile.html" class="hover:text-blue-400 transition">Profile</a></li>
+                <li><a href="gallery.html" class="hover:text-blue-400 transition">Gallery</a></li>
+                <li><a href="login.html" class="hover:text-blue-400 transition">Logout</a></li>
+            </ul>
+            <div class="flex items-center gap-4">
+                <button onclick="toggleDarkMode()" class="p-2 rounded-lg hover:bg-slate-700 transition" title="Toggle Dark Mode">
+                    <span id="theme-icon">🌙</span>
+                </button>
+                <button class="md:hidden text-white" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">☰</button>
+            </div>
+        </nav>
+        <div id="mobile-menu" class="hidden md:hidden bg-slate-700 px-4 py-2">
+            <a href="dashboard.html" class="block py-2 hover:text-blue-400">Dashboard</a>
+            <a href="profile.html" class="block py-2 hover:text-blue-400">Profile</a>
+            <a href="gallery.html" class="block py-2 hover:text-blue-400">Gallery</a>
+            <a href="login.html" class="block py-2 hover:text-blue-400">Logout</a>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-8">
+        <div class="text-center mb-8">
+            <h2 class="text-3xl font-bold text-gray-800 dark:text-white mb-2">My Photo Gallery</h2>
+            <p class="text-gray-600 dark:text-gray-300">Collection of achievements, projects, and learning moments</p>
+        </div>
+
+        <!-- Gallery Controls -->
+        <section class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 mb-8 flex flex-wrap gap-4 items-center justify-between">
+            <button class="px-6 py-2 bg-green-500 text-white font-bold rounded-lg hover:bg-green-600 transition">+ Upload Photo</button>
+            <div class="flex gap-4">
+                <select class="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500">
+                    <option>All Photos</option>
+                    <option>Projects</option>
+                    <option>Certificates</option>
+                    <option>Events</option>
+                </select>
+                <select class="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500">
+                    <option>Newest First</option>
+                    <option>Oldest First</option>
+                </select>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section class="mb-8">
+            <h3 class="text-2xl font-bold text-gray-800 dark:text-white mb-4">Projects</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <article class="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+                    <img src="https://via.placeholder.com/300x200" alt="Project" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h4 class="text-lg font-bold text-gray-800 dark:text-white mb-2">Personal Learning Dashboard</h4>
+                        <p class="text-gray-600 dark:text-gray-300 text-sm mb-2">HTML5, CSS3, JavaScript</p>
+                        <time class="text-gray-500 text-xs">January 1, 2026</time>
+                        <div class="flex gap-2 mt-4">
+                            <button class="flex-1 px-3 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 text-sm">View</button>
+                            <button class="flex-1 px-3 py-2 bg-red-500 text-white rounded hover:bg-red-600 text-sm">Delete</button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+                    <img src="https://via.placeholder.com/300x200" alt="Project" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h4 class="text-lg font-bold text-gray-800 mb-2">E-commerce Website</h4>
+                        <p class="text-gray-600 text-sm mb-2">React, Node.js, MongoDB</p>
+                        <time class="text-gray-500 text-xs">December 20, 2025</time>
+                        <div class="flex gap-2 mt-4">
+                            <button class="flex-1 px-3 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 text-sm">View</button>
+                            <button class="flex-1 px-3 py-2 bg-red-500 text-white rounded hover:bg-red-600 text-sm">Delete</button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+                    <img src="https://via.placeholder.com/300x200" alt="Project" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h4 class="text-lg font-bold text-gray-800 mb-2">Weather App</h4>
+                        <p class="text-gray-600 text-sm mb-2">JavaScript, API Integration</p>
+                        <time class="text-gray-500 text-xs">December 10, 2025</time>
+                        <div class="flex gap-2 mt-4">
+                            <button class="flex-1 px-3 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 text-sm">View</button>
+                            <button class="flex-1 px-3 py-2 bg-red-500 text-white rounded hover:bg-red-600 text-sm">Delete</button>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Certificates Section -->
+        <section class="mb-8">
+            <h3 class="text-2xl font-bold text-gray-800 mb-4">Certificates</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <article class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+                    <img src="https://via.placeholder.com/300x200" alt="Certificate" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h4 class="text-lg font-bold text-gray-800 mb-2">HTML5 Fundamentals</h4>
+                        <p class="text-gray-600 text-sm mb-2">Completed Module 1</p>
+                        <time class="text-gray-500 text-xs">October 15, 2025</time>
+                        <div class="flex gap-2 mt-4">
+                            <button class="flex-1 px-3 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 text-sm">View</button>
+                            <button class="flex-1 px-3 py-2 bg-green-500 text-white rounded hover:bg-green-600 text-sm">Share</button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+                    <img src="https://via.placeholder.com/300x200" alt="Certificate" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h4 class="text-lg font-bold text-gray-800 mb-2">CSS3 Styling</h4>
+                        <p class="text-gray-600 text-sm mb-2">Completed Module 2</p>
+                        <time class="text-gray-500 text-xs">November 20, 2025</time>
+                        <div class="flex gap-2 mt-4">
+                            <button class="flex-1 px-3 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 text-sm">View</button>
+                            <button class="flex-1 px-3 py-2 bg-green-500 text-white rounded hover:bg-green-600 text-sm">Share</button>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Gallery Stats -->
+        <section class="bg-white rounded-lg shadow-lg p-6">
+            <h3 class="text-2xl font-bold text-gray-800 mb-6">Gallery Statistics</h3>
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+                <div class="text-center p-4 bg-gray-50 rounded-lg">
+                    <p class="text-3xl font-bold text-blue-500">15</p>
+                    <p class="text-gray-600 text-sm">Total</p>
+                </div>
+                <div class="text-center p-4 bg-gray-50 rounded-lg">
+                    <p class="text-3xl font-bold text-blue-500">4</p>
+                    <p class="text-gray-600 text-sm">Projects</p>
+                </div>
+                <div class="text-center p-4 bg-gray-50 rounded-lg">
+                    <p class="text-3xl font-bold text-blue-500">3</p>
+                    <p class="text-gray-600 text-sm">Certificates</p>
+                </div>
+                <div class="text-center p-4 bg-gray-50 rounded-lg">
+                    <p class="text-3xl font-bold text-blue-500">3</p>
+                    <p class="text-gray-600 text-sm">Events</p>
+                </div>
+                <div class="text-center p-4 bg-gray-50 rounded-lg">
+                    <p class="text-3xl font-bold text-blue-500">4</p>
+                    <p class="text-gray-600 text-sm">Achievements</p>
+                </div>
+                <div class="text-center p-4 bg-gray-50 rounded-lg">
+                    <p class="text-3xl font-bold text-blue-500">45MB</p>
+                    <p class="text-gray-600 text-sm">Storage</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-slate-800 text-white py-8 mt-12">
+        <div class="container mx-auto px-4 text-center">
+            <p>&copy; 2026 Personal Learning Dashboard. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleDarkMode() {
+            document.documentElement.classList.toggle('dark');
+            const isDark = document.documentElement.classList.contains('dark');
+            localStorage.setItem('darkMode', isDark);
+            document.getElementById('theme-icon').textContent = isDark ? '☀️' : '🌙';
+        }
+
+        if (localStorage.getItem('darkMode') === 'true') {
+            document.documentElement.classList.add('dark');
+            document.getElementById('theme-icon').textContent = '☀️';
+        }
+    </script>
+</body>
+</html>
