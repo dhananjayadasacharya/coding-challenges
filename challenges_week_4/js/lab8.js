@@ -22,6 +22,7 @@ while (true) {
     console.log(error.message);
     console.log("Please enter a valid email address.");
   }
+  break;
 }
 
 // 4. Simulate sending thank-you message

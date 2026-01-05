@@ -196,14 +196,14 @@ console.log("====================================");
 //lab6
 // 1. Prompt user for email address
 let email_address = prompt("Enter your email address:");
-
+let invoice_data;
 // Validate karunya.edu email
 if (!email_address.endsWith("@karunya.edu")) {
   console.log("Invalid email. Please use your karunya.edu email.");
 } else {
 
   // 2. Prepare invoice data object
-  let invoice_data = {
+  invoice_data = {
     invoiceNumber: invoice_number,
     invoiceDate: invoice_date.toLocaleString(),
     items: cart,
